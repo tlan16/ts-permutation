@@ -1,0 +1,17 @@
+{
+  "name": "combination_and_permutation",
+  "version": "1.0.0",
+  "main": "src/",
+  "license": "MIT",
+  "author": "Frank Lan <franklan118@gmail.com>",
+  "scripts": {
+    "dev": "nodemon src/main.ts"
+  },
+  "dependencies": {
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
