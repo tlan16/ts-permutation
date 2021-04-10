@@ -1,3 +1,3 @@
 import Permutation from './permutation';
 
-(new Permutation(3));
+console.log((new Permutation(3)).calculate());
