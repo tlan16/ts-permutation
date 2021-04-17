@@ -2,20 +2,20 @@ import { swap } from '../src/utilities';
 
 describe('utilities', () => {
   describe('swap', () => {
-    const happyCases: ReadonlyArray<[[string, number, string], string]> = [
-      [['abc', 0, 'z'], 'zbc'],
-      [['abc', 1, 'z'], 'azc'],
-      [['abc', 2, 'z'], 'abz'],
-      [['abc', 0, 'zz'], 'zzbc'],
-      [['abc', 1, 'zz'], 'azzc'],
-      [['abc', 2, 'zz'], 'abzz'],
+    const happyCases: ReadonlyArray<[[number[], number, number], number[]]> = [
+      [[[1, 2, 3], 0, 9], [9, 2, 3]],
+      [[[1, 2, 3], 1, 9], [1, 9, 3]],
+      [[[1, 2, 3], 2, 9], [1, 2, 9]],
+      [[[1, 2, 3], 0, 99], [99, 2, 3]],
+      [[[1, 2, 3], 1, 99], [1, 99, 3]],
+      [[[1, 2, 3], 2, 99], [1, 2, 99]],
     ];
     test.each(happyCases)('args: %s, result %s', (args, result) => {
       expect(swap(...args)).toStrictEqual(result);
     });
-    const badCases: ReadonlyArray<[[string, number, string]]> = [
-      [['abc', -1, 'z']],
-      [['abc', 3, 'z']],
+    const badCases: ReadonlyArray<[[number[], number, number], number[]]> = [
+      [[[1, 2, 3], -1, 9], [9, 2, 3]],
+      [[[1, 2, 3], 3, 9], [9, 2, 3]],
     ];
     test.each(badCases)('args: %s, result Error', (args) => {
       expect(() => {

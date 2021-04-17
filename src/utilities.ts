@@ -1,4 +1,5 @@
-export function swap(str: string, index: number, withStr: string): string {
-  if (index < 0 || index >= str.length) throw new Error(`index ${index} is not valid for string ${str}.`);
-  return str.slice(0, index) + withStr + str.substr(index + 1)
+export function swap(value: ReadonlyArray<number>, index: number, _with: number): typeof value {
+  if (index < 0 || index >= value.length)
+    throw new Error(`index ${index} is not valid for ${value.map(v => v.toString()).join(', ')}.`);
+  return [...value.slice(0, index), _with, ...value.slice(index + 1)];
 }
