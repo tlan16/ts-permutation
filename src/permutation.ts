@@ -1,19 +1,27 @@
-export function permutation(
-  n: Readonly<number>,
-  lock: number[] = [1],
-  result: number[][] = []
-): Readonly<typeof result>{
-  if (lock.length === n) {
-    result.push(lock);
-    for (let i: number = n - 1; i >= 0; i--) {
-      if (lock[i] === n) {
-        continue
-      }
-      lock = [...lock.slice(0, i), lock[i] + 1]
-      return permutation(n, lock, result)
-    }
-    return result;
+export default class Permutation {
+  private readonly n: number;
+  public results: number[][] = [];
+  public iterationCount: number = 0;
+
+  constructor(n: Permutation['n']) {
+    this.n = n;
+    console.log(`Permutation size is ${n}.`);
   }
-  lock = [...lock, 1];
-  return permutation(n, lock, result);
+
+  public calculate(lock: number[] = [1]): void {
+    this.iterationCount++;
+    if (lock.length === this.n) {
+      this.results.push(lock);
+      for (let i: number = this.n - 1; i >= 0; i--) {
+        if (lock[i] === this.n) {
+          continue
+        }
+        lock = [...lock.slice(0, i), lock[i] + 1]
+        return this.calculate(lock)
+      }
+      return;
+    }
+    lock = [...lock, 1];
+    return this.calculate(lock);
+  }
 }

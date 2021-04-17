@@ -1,7 +1,9 @@
-import { permutation } from './permutation';
+import Permutation from './permutation';
 
-const result = permutation(3);
+const permutation = new Permutation(3);
+permutation.calculate();
 console.log({
-  result,
-  length: result.length,
+  result: permutation.results,
+  length: permutation.results.length,
+  iterationCount: permutation.iterationCount,
 });
