@@ -1,3 +1,4 @@
 import Permutation from './permutation';
 
-console.log((new Permutation(3)).calculate());
+const result = (new Permutation(3)).calculate();
+console.log({ result, length: result.length });

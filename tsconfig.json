@@ -2,6 +2,8 @@
   "compilerOptions": {
     "target": "esnext",
     "moduleResolution": "node",
+    "esModuleInterop": true,
+    "importHelpers": true,
     "module": "commonjs",
     "declaration": false,
     "noLib": false,
