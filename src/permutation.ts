@@ -1,17 +1,20 @@
-export default class Permutation {
+export function permutation(n: Permutation['n']): ReadonlyArray<number[]> {
+  const permutation = new Permutation(n);
+  permutation.calculate();
+  return permutation.result;
+}
+
+class Permutation {
   private readonly n: number;
-  public results: number[][] = [];
-  public iterationCount: number = 0;
+  public readonly result: number[][] = [];
 
   constructor(n: Permutation['n']) {
     this.n = n;
-    console.log(`Permutation size is ${n}.`);
   }
 
   public calculate(lock: number[] = [1]): void {
-    this.iterationCount++;
     if (lock.length === this.n) {
-      this.results.push(lock);
+      this.result.push(lock);
       for (let i: number = this.n - 1; i >= 0; i--) {
         if (lock[i] === this.n) {
           continue
