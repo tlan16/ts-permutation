@@ -1,14 +1,8 @@
-export function permutation(n: Permutation['n']): ReadonlyArray<number[]> {
-  const permutation = new Permutation(n);
-  permutation.calculate();
-  return permutation.result;
-}
-
-class Permutation {
+export default class PermutationWithRepetition {
   private readonly n: number;
   public readonly result: number[][] = [];
 
-  constructor(n: Permutation['n']) {
+  constructor(n: PermutationWithRepetition['n']) {
     this.n = n;
   }
 

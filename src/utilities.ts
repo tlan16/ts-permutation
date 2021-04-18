@@ -3,3 +3,7 @@ export function swap(value: ReadonlyArray<number>, index: number, _with: number)
     throw new Error(`index ${index} is not valid for ${value.map(v => v.toString()).join(', ')}.`);
   return [...value.slice(0, index), _with, ...value.slice(index + 1)];
 }
+
+export function isInteger(value: unknown): value is number {
+  return Number.isSafeInteger(value);
+}
