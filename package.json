@@ -5,7 +5,8 @@
   "license": "MIT",
   "author": "Frank Lan <franklan118@gmail.com>",
   "scripts": {
-    "dev": "nodemon src/main.ts"
+    "dev": "nodemon src/main.ts",
+    "test": "jest"
   },
   "dependencies": {
   },

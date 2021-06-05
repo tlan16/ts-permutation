@@ -10,4 +10,7 @@ module.exports = {
     "prettier/@typescript-eslint",
     "plugin:prettier/recommended",
   ],
+  rules: {
+    semi: 'error'
+  }
 };

@@ -1,6 +1,7 @@
-import { permutationWithRepetition } from './lib';
+import { permutationWithoutRepetition, permutationWithRepetition } from './lib';
 
-const result = permutationWithRepetition(3);
+const result = permutationWithoutRepetition(4);
+// const result = permutationWithRepetition(4);
 console.log({
   result,
   length: result.length,

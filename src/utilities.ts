@@ -7,3 +7,7 @@ export function swap(value: ReadonlyArray<number>, index: number, _with: number)
 export function isInteger(value: unknown): value is number {
   return Number.isSafeInteger(value);
 }
+
+export function isPositiveInteger(value: unknown): value is number {
+  return isInteger(value) && value > 0;
+}
