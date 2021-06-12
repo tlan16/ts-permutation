@@ -8,10 +8,11 @@ export function permutationWithoutRepetition(
   result: ReadonlyArray<InputElement>[] = []
 ): typeof result {
   if (totalNumberOfOrations === 1) {
-    result.push(sequence)
+    result.push(sequence);
   } else {
-    for (let numberToRotateWith: number = 0; numberToRotateWith < totalNumberOfOrations; numberToRotateWith++) {
-      let newSequence = shiftPortionOfArrayByAmount(
+
+    for (let numberToRotateWith = 0; numberToRotateWith < totalNumberOfOrations; numberToRotateWith++) {
+      const newSequence = shiftPortionOfArrayByAmount(
         sequence,
         values.length - totalNumberOfOrations,
         values.length - 1,
