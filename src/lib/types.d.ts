@@ -1,1 +1,1 @@
-export type InputElement = number | string;
+export type InputElement = number | string

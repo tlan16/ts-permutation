@@ -1,35 +1,28 @@
 {
-  "compilerOptions": {
-    "target": "esnext",
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "importHelpers": true,
-    "module": "commonjs",
-    "declaration": false,
-    "noLib": false,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "sourceMap": true,
-    "pretty": true,
-    "allowUnreachableCode": true,
-    "allowUnusedLabels": true,
-    "noImplicitAny": true,
-    "noImplicitReturns": false,
-    "noImplicitUseStrict": false,
-    "outDir": "dist/",
-    "baseUrl": "src/",
-    "listFiles": false,
-    "noEmitHelpers": true,
-    "lib": [
-      "esnext",
-      "dom"
-    ]
-  },
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-    "node_modules"
-  ],
-  "compileOnSave": false
+    "compilerOptions": {
+        "target": "esnext",
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "importHelpers": true,
+        "module": "commonjs",
+        "declaration": false,
+        "noLib": false,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "sourceMap": true,
+        "pretty": true,
+        "allowUnreachableCode": true,
+        "allowUnusedLabels": true,
+        "noImplicitAny": true,
+        "noImplicitReturns": false,
+        "noImplicitUseStrict": false,
+        "outDir": "dist/",
+        "baseUrl": "src/",
+        "listFiles": false,
+        "noEmitHelpers": true,
+        "lib": ["esnext", "dom"]
+    },
+    "include": ["src/**/*"],
+    "exclude": ["node_modules"],
+    "compileOnSave": false
 }
