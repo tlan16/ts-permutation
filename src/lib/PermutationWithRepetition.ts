@@ -1,24 +1,17 @@
-export default class PermutationWithRepetition {
-  private readonly n: number;
-  public readonly result: number[][] = [];
+import { changeValueAtIndex } from '../utilities';
 
-  constructor(n: PermutationWithRepetition['n']) {
-    this.n = n;
-  }
-
-  public calculate(lock: number[] = [1]): void {
-    if (lock.length === this.n) {
-      this.result.push(lock);
-      for (let i: number = this.n - 1; i >= 0; i--) {
-        if (lock[i] === this.n) {
-          continue
-        }
-        lock = [...lock.slice(0, i), lock[i] + 1]
-        return this.calculate(lock)
-      }
-      return;
+export function permutationWithRepetitionCalculator(
+  sequence: ReadonlyArray<number>,
+  changingPosition: number,
+  result: ReadonlyArray<number>[] = []
+): Readonly<typeof result>{
+  for(let changeTo: number = 1; changeTo <= sequence.length; changeTo++) {
+    const newSequence = changeValueAtIndex(sequence, changingPosition - 1, changeTo);
+    if (changingPosition === sequence.length) {
+      result.push(newSequence)
+    } else {
+      permutationWithRepetitionCalculator(newSequence, changingPosition + 1, result)
     }
-    lock = [...lock, 1];
-    return this.calculate(lock);
   }
+  return result;
 }

@@ -19,6 +19,12 @@ export function shift(value: ReadonlyArray<number>, shiftBy: number): typeof val
   return [...a, ...b];
 }
 
+export function changeValueAtIndex(value: ReadonlyArray<number>, index: number, changeTo: number): Readonly<typeof value> {
+  const newValue = [...value];
+  newValue[index] = changeTo;
+  return newValue;
+}
+
 export function generateSequence(n: number): ReadonlyArray<number> {
   return [...Array(n).keys()].map(n => n + 1);
 }
