@@ -11,3 +11,14 @@ export function isInteger(value: unknown): value is number {
 export function isPositiveInteger(value: unknown): value is number {
   return isInteger(value) && value > 0;
 }
+
+export function shift(value: ReadonlyArray<number>, shiftBy: number): typeof value {
+  if (shiftBy === 0) return value;
+  const a = value.slice(-shiftBy)
+  const b = value.slice(0, value.length - shiftBy)
+  return [...a, ...b];
+}
+
+export function generateSequence(n: number): ReadonlyArray<number> {
+  return [...Array(n).keys()].map(n => n + 1);
+}
