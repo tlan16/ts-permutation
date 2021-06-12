@@ -4,15 +4,20 @@ import type { InputElement } from './types';
 export function permutationWithoutRepetition(
   values: ReadonlyArray<InputElement>,
   sequence: ReadonlyArray<InputElement> = generateSequence(values.length),
-  nRotation: number = values.length,
+  totalNumberOfOrations: number = values.length,
   result: ReadonlyArray<InputElement>[] = []
 ): typeof result {
-  if (nRotation === 1) {
+  if (totalNumberOfOrations === 1) {
     result.push(sequence)
   } else {
-    for (let i: number = 0; i < nRotation; i++) {
-      let newSequence = shiftPortionOfArrayByAmount(sequence, values.length - nRotation, values.length - 1, i);
-      permutationWithoutRepetition(values, newSequence, nRotation - 1, result);
+    for (let numberToRotateWith: number = 0; numberToRotateWith < totalNumberOfOrations; numberToRotateWith++) {
+      let newSequence = shiftPortionOfArrayByAmount(
+        sequence,
+        values.length - totalNumberOfOrations,
+        values.length - 1,
+        numberToRotateWith
+      );
+      permutationWithoutRepetition(values, newSequence, totalNumberOfOrations - 1, result);
     }
   }
   return result;
