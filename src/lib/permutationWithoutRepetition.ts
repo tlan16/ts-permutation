@@ -6,7 +6,7 @@ export function permutationWithoutRepetition(
     sequence: ReadonlyArray<InputElement> = generateSequence(values.length),
     totalNumberOfOrations: number = values.length,
     result: ReadonlyArray<InputElement>[] = [],
-): typeof result {
+): Readonly<typeof result> {
     if (totalNumberOfOrations === 1) {
         result.push(sequence)
     } else {
